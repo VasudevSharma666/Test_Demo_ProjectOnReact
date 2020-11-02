@@ -1,0 +1,158 @@
+.login-form{
+  text-align: left;
+ width: 100%;
+ max-width: 330px;
+ padding : 15px ;
+ margin: auto;
+ height: 100%;
+}
+
+.Registration-from{
+  text-align: left;
+  width: 100%;
+ max-width: 330px;
+ padding : 15px ;
+ margin: auto;
+ height: 100%;
+}
+
+.wrapper {
+position: absolute;
+left: 750px;
+top : 150px;
+box-shadow: 5px 10px 18px gray;
+width: 20%;
+background-color: beige;
+}
+
+.wrapperRegistration{
+  position: absolute;
+  right: 700px;
+  bottom: 300px;
+  width: 20%;
+  box-shadow: 5px 10px 18px gray;
+}
+
+.Facebook{
+  position: absolute;
+  left: 800px;
+  top: 100px;
+  color:  blue;
+  text-transform: uppercase;
+  text-shadow: 3px 5px 5px gray;
+}
+
+.Background{
+  background-image: url("https://better-robots.com/wp-content/uploads/revslider/seo-service-slider/rocket-notebook.png");
+  height: 130vh;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: inherit;
+ }
+   body,html{
+  height: 100%;
+  margin: 0;
+}
+
+.StartPoint{
+  position: absolute;
+  top : 250px;
+   left: 550px; 
+}
+
+.PostsTag{
+  
+  border-radius: 25px;
+  background-color: gainsboro;
+  max-width: 700px;
+  box-shadow: 5px 10px 18px gray;
+}
+
+span{
+  color :green;
+}
+
+
+
+
+
+.NameOfPerson{
+  text-transform: uppercase;
+   color: blue; 
+}
+
+.StartPointOfComment{
+  position: absolute;
+  top : 250px;
+}
+
+.divposts{
+  border-radius: 25px;
+  background-color: gainsboro;
+  box-shadow: 5px 10px 18px gray;
+}
+
+.Comment{
+  text-transform: uppercase;
+  color: green;
+  position: absolute;
+  left: 0;
+  top: 180px;
+}
+
+.NewPostMaker{
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/589/989/169/dark-minimalism-black-background-photography-wallpaper-preview.jpg");
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
+
+.NewPostMakerForm{
+  color:white;
+  position: absolute;
+  top : 200px;
+  left:  550px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  box-shadow: 5px 10px 18px gray;
+}
+
+.HomePageBackground{
+  background-image: url("https://www.onblastblog.com/wp-content/uploads/2017/11/writing-blogs.jpeg");
+  height: 3000px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.OtherLink{
+  border-radius: 5px;
+  background-color: gainsboro;
+  max-width: 15%;
+  height: 5%;
+  box-shadow: 5px 10px 10px gray;
+}
+
+.PersonData{
+  
+  text-align: left;
+  position: absolute;
+  top : 200px;
+  left: 700px;
+  box-shadow: 5px 10px 18px gray;
+}
+
+.NoPosts{
+  border: solid black;
+  position: absolute;
+  left: 400px;
+  background-color: white;
+}
+
+.DeletedImg{
+  position: absolute;
+  right: 35px;
+  
+}
