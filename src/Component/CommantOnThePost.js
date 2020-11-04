@@ -3,7 +3,8 @@ import { useLocation,Link } from 'react-router-dom'
 import * as ReactBoot from 'reactstrap'
 const initialState={
    posts : [],
-   comment : []
+   comment : [],
+   todoComment : ''
 }
 
 const reducer=(state,action)=>{
@@ -13,6 +14,9 @@ const reducer=(state,action)=>{
      }
      case "Comments":{
          return{...state,comment : action.value}
+     }
+     case "NewComment" :{
+         return{...state,todoComment : action.value}
      }
      default:{
 
@@ -50,6 +54,14 @@ function CommentOnThePost() {
         </React.Fragment>)
  }
 
+ const DeletedTheComment=(e)=>{
+     
+    fetch('http://localhost:3000/comments/'+e.target.id, {
+        method: 'DELETE',
+              })
+              window.location.reload(false);
+ }
+
  const ShowTheComments=()=>{
        return(<React.Fragment>
         {
@@ -57,9 +69,31 @@ function CommentOnThePost() {
                 <span>email:-</span>    {comment.email}
                 <br/>
                 <span>Comment:-</span>    {comment.body}
+                <br/>
+                <input type="image" id={comment.id} onClick={e=>DeletedTheComment(e)}  src="https://www.flaticon.com/svg/static/icons/svg/3159/3159662.svg" width="20" height="30"/>
                  </p>)
         }
         </React.Fragment>)
+ }
+
+ const SubmitTheComment=(e)=>{
+    e.preventDefault();
+
+    console.log("It working")
+    fetch('http://localhost:3000/comments', {
+  method: 'POST',
+  body: JSON.stringify({
+    postId: postId,
+    email : localStorage.getItem("email"),
+    body : state.todoComment,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => alert("Your comment is save"))
+  window.location.reload(false);
  }
     return (
         <div className="StartPointOfComment">
@@ -71,6 +105,14 @@ function CommentOnThePost() {
         
         <ShowTheComments/>
         <Link to="/home">Back</Link>
+        <hr/>
+        <div className="NewCommentAdder">
+        <ReactBoot.Form onSubmit={SubmitTheComment}>
+         <ReactBoot.Label>Comment</ReactBoot.Label>
+         <ReactBoot.Input type="text"  value={state.todoComment} onChange={e=>{dispatch({type : "NewComment" , value : e.target.value})}} placeholder="Comment" />
+         <ReactBoot.Button type="submit">Submit</ReactBoot.Button>
+         </ReactBoot.Form>
+         </div>
         </div>
     )
 

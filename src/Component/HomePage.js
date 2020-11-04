@@ -3,7 +3,7 @@ import { Redirect,Link } from 'react-router-dom';
 import * as ReactBoot from 'reactstrap'
 import { Navbar } from 'reactstrap';
 import  "./Form.css"
-import Deleted from './Deleted';
+
 var commt=""
 const  initialState={
  name : "",
@@ -46,6 +46,9 @@ function HomePage() {
        fetch('http://localhost:3000/posts/'+e.target.id, {
   method: 'DELETE',
         })
+    fetch('http://localhost:3000/comments?postId='+e.target.id, {
+            method: 'DELETE',
+                  })
         window.location.reload(false);
    }
 
@@ -96,6 +99,7 @@ function HomePage() {
           <hr/>
           <Link to="/home/OtherPost">See Other Post</Link>
           <hr/>
+          <Link ></Link>
          </div>
          
          
